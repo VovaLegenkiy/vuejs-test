@@ -1,21 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld/HelloWorld'
-import About from '@/components/About/About'
+import InputValue from '@/components/InputValue/InputValue'
+import CurrencyPair from '@/components/CurrencyPair/CurrencyPair'
+import Result from '@/components/Result/Result'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'InputValue',
+      component: InputValue
     },
     {
-      path: '/about',
-      name: 'About',
-      component: About
+      path: '/сurrency-pair',
+      name: 'CurrencyPair',
+      component: CurrencyPair
+    },
+    {
+      path: '/result',
+      name: 'Result',
+      component: Result
     }
   ]
 })
