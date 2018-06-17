@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import {mapState, mapMutations} from 'vuex'
+  import {mapState, mapMutations} from 'vuex';
 
   export default {
     name: 'InputValue',
@@ -24,7 +24,7 @@
         'resetValue'
       ])
     }
-  }
+  };
 </script>
 
 <style scoped>
