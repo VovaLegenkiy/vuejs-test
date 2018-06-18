@@ -1,28 +1,31 @@
 <template>
   <div>
     <p>Result</p>
-    <p>{{getResult()}}</p>
+    <p>{{result}}{{currentSymbol}}</p>
     <router-link to="/" tag="button">Home</router-link>
   </div>
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+  import { mapActions, mapState } from 'vuex';
 
   export default {
     name: 'Result',
+    computed: {
+      ...mapState([
+        'currentSymbol',
+        'result'
+      ])
+    },
     methods: {
-      ...mapGetters([
-        'getResult'
-      ]),
       ...mapActions([
-        'addToHistory'
+        'addToHistory',
       ])
     },
     created () {
-      this.addToHistory()
+      this.addToHistory();
     }
-  }
+  };
 </script>
 
 <style scoped>

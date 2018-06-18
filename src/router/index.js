@@ -1,16 +1,16 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import InputValue from '@/components/InputValue/InputValue'
-import CurrencyPair from '@/components/CurrencyPair/CurrencyPair'
-import Result from '@/components/Result/Result'
+import Vue from 'vue';
+import Router from 'vue-router';
+import InputValue from '@/components/InputValue/InputValue';
+import CurrencyPair from '@/components/CurrencyPair/CurrencyPair';
+import Result from '@/components/Result/Result';
 
 Vue.use(Router);
 
 export default new Router({
-  mode:'history',
+  mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '*',
       name: 'InputValue',
       component: InputValue
     },
@@ -25,4 +25,4 @@ export default new Router({
       component: Result
     }
   ]
-})
+});

@@ -1,15 +1,15 @@
 <template>
   <div class="hello">
     <form>
-      <input type="text" :value.number="value" placeholder="set your value" @input="setValue($event.target.value)">
-      <router-link to="/сurrency-pair" tag="button">Convert</router-link>
-      <button @click="resetValue">Reset</button>
+      <input type="text" :value="value" placeholder="set your value" @input="setValue($event.target.value)">
+      <router-link to="/сurrency-pair" tag="button" v-if="value">Convert</router-link>
+      <button @click.prevent="resetValue" v-if="value">Reset</button>
     </form>
   </div>
 </template>
 
 <script>
-  import { mapMutations, mapState } from 'vuex'
+  import { mapMutations, mapState } from 'vuex';
 
   export default {
     name: 'InputValue',
@@ -24,7 +24,7 @@
         'resetValue'
       ])
     }
-  }
+  };
 </script>
 
 <style scoped>

@@ -6,12 +6,15 @@
 </template>
 
 <script>
-  import ConvertHistory from './components/ConvertHistory/ConvertHistory'
+  import ConvertHistory from './components/ConvertHistory/ConvertHistory';
 
   export default {
     name: 'App',
-    components: {ConvertHistory}
-  }
+    components: {ConvertHistory},
+    created () {
+      this.$store.dispatch('getData');
+    }
+  };
 </script>
 
 <style>
