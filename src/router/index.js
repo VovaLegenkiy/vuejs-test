@@ -7,6 +7,7 @@ import Result from '@/components/Result/Result'
 Vue.use(Router);
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/',

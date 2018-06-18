@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <convert-history></convert-history>
     <router-view/>
+    <convert-history></convert-history>
   </div>
 </template>
 
 <script>
-  import ConvertHistory from "./components/ConvertHistory/ConvertHistory";
+  import ConvertHistory from './components/ConvertHistory/ConvertHistory'
 
   export default {
     name: 'App',
@@ -15,15 +15,6 @@
 </script>
 
 <style>
-  .btn{
-    text-decoration: none;
-    color: black;
-    border: 1px solid black;
-    padding: 1px 6px;
-    margin: 10px;
-    display: inline-block;
-    background-color: buttonface;
-  }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

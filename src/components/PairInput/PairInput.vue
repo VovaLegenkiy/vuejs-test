@@ -1,13 +1,16 @@
 <template>
   <label>
     <input type="radio" name="pair" :value.number="currencyMultiplierValue"
-           @input="setCurrMultValue({currecny:curr.ccy,value:curr.sale})">{{curr.ccy}}
-    to
-    {{curr.base_ccy}}
+           @input="setCurrMultValue({
+           from:curr.ccy,
+           to:curr.base_ccy,
+           sale:curr.sale
+           })">
+    {{curr.ccy}} to {{curr.base_ccy}}
   </label>
 </template>
 <script>
-  import {mapState, mapMutations} from 'vuex';
+  import { mapActions, mapState } from 'vuex'
 
   export default {
     name: 'PairInput',
@@ -18,11 +21,11 @@
       ])
     },
     methods: {
-      ...mapMutations([
+      ...mapActions([
         'setCurrMultValue'
-      ])
+      ]),
     }
-  };
+  }
 
 </script>
 <style scoped>
