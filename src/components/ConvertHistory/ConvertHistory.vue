@@ -16,7 +16,7 @@
           <td class="row-cell">{{item.value}}</td>
           <td class="row-cell">{{item.ccy}}</td>
           <td class="row-cell">{{item.base_ccy}}</td>
-          <td class="row-cell">{{item.result}}</td>
+          <td class="row-cell">{{item.result}}{{item.currentSymbol}}</td>
         </tr>
         </tbody>
       </table>

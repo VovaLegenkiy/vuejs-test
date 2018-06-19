@@ -35,12 +35,18 @@ export default new Vuex.Store({
       state.result = state.currencyMultiplierValue.sale * state.value;
     },
     addToHistory (state) {
-      const {currencyMultiplierValue, value, result} = state;
+      const {
+        currencyMultiplierValue,
+        value,
+        result,
+        currentSymbol
+      } = state;
       const data = {
         base_ccy: currencyMultiplierValue.base_ccy,
         ccy: currencyMultiplierValue.ccy,
         value,
-        result
+        result,
+        currentSymbol
       };
       state.history.push(data);
     },
