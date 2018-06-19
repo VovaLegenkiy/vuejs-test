@@ -1,6 +1,6 @@
 <template>
   <label>
-    <input type="radio" name="pair" :value.number="currencyMultiplierValue"
+    <input type="radio" name="pair" :value.number="curr"
            @input="setCurrMultValue(curr)"
            :checked="currencyMultiplierValue.ccy===curr.ccy">
     {{curr.ccy}} to {{curr.base_ccy}}

@@ -10,7 +10,7 @@ const DEFAULT_CURRENCY_DATA = [];
 const DEFAULT_HISTORY_DATA = [];
 const URL = 'https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11';
 const CURRENCY_SYMBOLS = {'USD': '$', 'UAH': '₴', 'RUR': '₽', 'BTC': 'Ƀ', 'EUR': '€'};
-const DEFAULT_SYMBOL = '$';
+const DEFAULT_SYMBOL = '₴';
 export default new Vuex.Store({
   state: {
     value: DEFAULT_VALUE,
@@ -29,7 +29,7 @@ export default new Vuex.Store({
       state.value = DEFAULT_VALUE;
     },
     setSymbol (state) {
-      state.symbol = state.currencySymbols[state.currencyMultiplierValue.ccy];
+      state.currentSymbol = state.currencySymbols[state.currencyMultiplierValue.base_ccy];
     },
     setResult (state) {
       state.result = state.currencyMultiplierValue.sale * state.value;
@@ -71,6 +71,7 @@ export default new Vuex.Store({
     },
     setCurrMultValue ({commit}, newValue) {
       commit('setCurrencyMultiplierValue', newValue);
+      commit('setSymbol');
       commit('setResult', newValue);
       commit('addCurrencyToLocalStorage');
     },
