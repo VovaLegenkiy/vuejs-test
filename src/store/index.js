@@ -31,8 +31,8 @@ export default new Vuex.Store({
     setSymbol (state) {
       state.symbol = state.currencySymbols[state.currencyMultiplierValue.ccy];
     },
-    setResult (state, payload) {
-      state.result = payload.sale * state.value;
+    setResult (state) {
+      state.result = state.currencyMultiplierValue.sale * state.value;
     },
     addToHistory (state) {
       const {currencyMultiplierValue, value, result} = state;
@@ -62,10 +62,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    getData () {
+    getData ({commit}) {
       axios.get(URL)
         .then(response => {
           this.state.currencyData = response.data;
+          commit('setCurrencyMultiplierValue', response.data[0]);
         });
     },
     setCurrMultValue ({commit}, newValue) {
