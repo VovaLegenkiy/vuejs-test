@@ -1,7 +1,7 @@
 <template>
   <label>
     <input type="radio" name="pair" :value.number="currencyMultiplierValue"
-           @input="setCurrMultValue(currencyMultiplierValue)"
+           @input="setCurrMultValue(curr)"
            :checked="currencyMultiplierValue.ccy===curr.ccy">
     {{curr.ccy}} to {{curr.base_ccy}}
   </label>
@@ -12,11 +12,6 @@
   export default {
     name: 'PairInput',
     props: ['curr', 'index'],
-    data: function () {
-      return {
-        checked: false
-      };
-    },
     computed: {
       ...mapState({
         currencyMultiplierValue: state => state.currencyMultiplierValue
